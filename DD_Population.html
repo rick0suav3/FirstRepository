@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script>
+                    let stateCounty = {
+                        Alabama:["Autauga","Baldwin","Barbour","Bibb","Blount","Bullock","Butler","Calhoun","Chambers","Cherokee","Choctaw"],
+                        Alaska:["Aleutians","Anchorage","Bristol Bay","Denali","Fairbanks North Star","Haines","Juneau","Kenai Peninsula","Ketchikan Gateway","Kodiak Island","Lake and Peninsula"],
+                        Arizona:["Apache","Cochise","Coconino","Gila","Graham","Greenlee","La Paz","Maricopa","Mohave","Navajo","Pima"],
+                        Arkansas:["Arkansas","Ashley","Baxter","Benton","Boone","Bradley","Calhoun","Carroll","Chicot","Clark","Clay"],
+                        California:["Alameda","Alpine","Amador","Butte","Calaveras","Colusa","Contra Costa","Del Norte","El Dorado","Fresno","Glenn"]
+                    }                   
+            
+                    function getStateKey(){
+
+                        let stateDD = document.getElementById("selState");
+                        let stateLst = Object.keys(stateCounty);
+                        let options = "<option value = '0'> select </option>";
+
+                        for (let i = 0; i < stateLst.length; i++){
+                            options += "<option value = '" + stateLst[i] + "'>" + stateLst[i] + "</option>";
+                            }
+                            
+                        stateDD.innerHTML = options;
+                    }
+            </script>
+    </head>
+    <body onload = "getStateKey()">
+        <select id = "selState" name = "state" default = "Select State"></select>
+    </body>    
+</html>
