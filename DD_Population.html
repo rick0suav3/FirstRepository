@@ -4,7 +4,7 @@
     </head>
     <body onload = "getStateKey()">
         <select id = "selState" name = "state" default = "Select State" onchange = "getCounties()"></select>
-        <select id = "selCounty" name = "county" defualt = "Select County"></select>        
+        <select id = "selCounty" name = "county" defualt = "Select County" style = "visibility: hidden"></select>        
         <script>
         let stateCounty = {
             Alabama:["Autauga","Baldwin","Barbour","Bibb","Blount","Bullock","Butler","Calhoun","Chambers","Cherokee","Choctaw"],
@@ -17,7 +17,7 @@
             function getStateKey(){
                 let stateDD = document.getElementById("selState");
                 let stateLst = Object.keys(stateCounty);
-                let stateOpt = "<option value = '0'> select </option>"
+                let stateOpt = "<option value = '0'> --Select- </option>"
                 for (let i = 0; i < stateLst.length; i++){
                     stateOpt += "<option value = '" + stateLst[i] + "'>" + stateLst[i] + "</option>";
                 }
@@ -27,11 +27,12 @@
             function getCounties(){
                 let selectedState = document.getElementById("selState").value;
                 let countyDD = document.getElementById("selCounty");
-                let countyOpt = "<option value = '0'> select </option>"
+                let countyOpt = "<option value = '0'> --Select-- </option>"
                 for(let i = 0; i < stateCounty[selectedState].length; i++){
                      countyOpt += "<option value = '" + stateCounty[selectedState][i] + "'>" + stateCounty[selectedState][i] + "</option>";
                  }
-                 countyDD.innerHTML = countyOpt;                
+                 countyDD.innerHTML = countyOpt;
+                 countyDD.style.visibility = "visible";
             }            
         </script>
     </body>    
