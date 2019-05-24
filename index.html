@@ -2,40 +2,38 @@
     <head>        
         <h1>"State/County Selctor"</h1>
         <script src="DD_Population.js"></script>
+        <link rel="stylesheet" href="DD_style.css">
     </head>
     <body onload = "getStateKey()">
-        <select id = "selState" name = "state" default = "Select State" onchange = "getCounties()"></select>
-        <select id = "selCounty" name = "county" defualt = "Select County" style = "visibility: hidden"></select>
-        <select id = "selCounty" name = "county" defualt = "Select County" style = "visibility:hidden"></select>
-        <!-- <script>
-        let stateCounty = {
-            Alabama:["Autauga","Baldwin","Barbour","Bibb","Blount","Bullock","Butler","Calhoun","Chambers","Cherokee","Choctaw"],
-            Alaska:["Aleutians","Anchorage","Bristol Bay","Denali","Fairbanks North Star","Haines","Juneau","Kenai Peninsula","Ketchikan Gateway","Kodiak Island","Lake and Peninsula"],
-            Arizona:["Apache","Cochise","Coconino","Gila","Graham","Greenlee","La Paz","Maricopa","Mohave","Navajo","Pima"],
-            Arkansas:["Arkansas","Ashley","Baxter","Benton","Boone","Bradley","Calhoun","Carroll","Chicot","Clark","Clay"],
-            California:["Alameda","Alpine","Amador","Butte","Calaveras","Colusa","Contra Costa","Del Norte","El Dorado","Fresno","Glenn"]
-            }
-        
-            function getStateKey(){
-                let stateDD = document.getElementById("selState");
-                let stateLst = Object.keys(stateCounty);
-                let stateOpt = "<option value = '0'> --Select- </option>"
-                for (let i = 0; i < stateLst.length; i++){
-                    stateOpt += "<option value = '" + stateLst[i] + "'>" + stateLst[i] + "</option>";
-                }
-                    stateDD.innerHTML = stateOpt;                    
-            }
+        <nav>
+            <span class="open-slide">
+                <a href="#" onclick="openSlideMenu()">
+                    <svg width="20" height="30">
+                        <path d="M0,5 30,5" stroke="#000" stroke-width="3">
+                        <path d="M0,14 30,14" stroke="#000" stroke-width="3">
+                        <path d="M0,23 30,23" stroke="#000" stroke-width="3">                        
+                    </svg>
+                </a>
+            </span>
 
-            function getCounties(){                
-                let selectedState = document.getElementById("selState").value;
-                let countyDD = document.getElementById("selCounty");
-                let countyOpt = "<option value = '0'> --Select-- </option>"
-                for(let i = 0; i < stateCounty[selectedState].length; i++){
-                     countyOpt += "<option value = '" + stateCounty[selectedState][i] + "'>" + stateCounty[selectedState][i] + "</option>";
-                 }
-                 countyDD.innerHTML = countyOpt;
-                 countyDD.style.visibility = "visible";
-            }            
-        </script> -->
+            <ul>
+                <li><a href="#">Client Search</a></li>
+                <li><a href="#">Client Tracking</a></li>
+                <li><a href="#">Client Parms</a></li>
+                <li><a href="#">Create New Client</a></li>
+            </ul>
+        </nav>
+        <div id="side-menu" class="side-nav">
+            <a href="#" class="btn=close" onclick="closeSlideMenu()">&times;</a>
+            <a href="#" >Client Search</a>
+            <a href="#" >Client Tracking</a>
+            <a href="#" >Client Parms</a>
+            <a href="#" >Create New Client</a>
+        </div>
+        <div id="mani">
+            <h1>Responsive side Menu</h1>
+        </div>
+        <select id = "selState" name = "state" default = "Select State" onchange = "getCounties()"></select>
+        <select id = "selCounty" name = "county" defualt = "Select County" style = "visibility:hidden"></select>        
     </body>    
 </html>
